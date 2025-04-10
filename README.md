@@ -2,9 +2,9 @@
 
 - [テスト駆動開発（TDD）とは](docs/what's-TDD.md)
 - [テストリストの作成と管理](docs/test-list-management.md)
-- [TDD におけるテスト - 失敗するテストの書き方](docs/testing-in-TDD.md)
-- [TDD における実装 - テストを通過させる効率的アプローチ](docs/Implementation-in-TDD.md)
-- [TDD におけるリファクタリング - 品質向上のための実践手法](docs/refactoring-in-TDD.md)
+- [Red 🔴 - 失敗するテストの書き方](docs/testing-in-TDD.md)
+- [Green 🟢 - テストを通過させる効率的アプローチ](docs/Implementation-in-TDD.md)
+- [Refactor 🔵 - 品質向上のための実践手法](docs/refactoring-in-TDD.md)
 - [TypeScriptでのTDDパターン集](docs/collection-of-TDD-patterns-TypeScript/index.md)
    - [基本的な関数のテスト](docs/collection-of-TDD-patterns-TypeScript/basic-function-testing.md)
    - [クラスとオブジェクト指向のテスト](docs/collection-of-TDD-patterns-TypeScript/class-and-object-oriented-testing.md)
