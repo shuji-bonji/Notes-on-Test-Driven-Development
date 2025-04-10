@@ -1,0 +1,71 @@
+<svg width="500" height="370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="gray"/>
+    </marker>
+  </defs>
+
+  <!-- Redノード -->
+  <circle cx="200" cy="60" r="50" fill="#ff4d4d" stroke="black" stroke-width="2"/>
+  <text x="200" y="55" text-anchor="middle" font-size="14" fill="white" font-weight="bold">Red</text>
+  <text x="200" y="75" text-anchor="middle" font-size="12" fill="white">テスト失敗</text>
+
+  <!-- Red コメントボックス -->
+  <rect x="270" y="20" width="145" height="90" fill="#fff8dc"/>
+  <text x="280" y="35" font-size="12" fill="black">テストを書く</text>
+  <text x="280" y="50" font-size="12" fill="black">(未実装にてテスト失敗)</text>
+  <text x="280" y="70" font-size="12" fill="black">- 機能を追加</text>
+  <text x="280" y="85" font-size="12" fill="black">- 条件を追加</text>
+  <text x="280" y="100" font-size="12" fill="black">- バグの再現</text>
+
+  <!-- Greenノード -->
+  <circle cx="320" cy="260" r="50" fill="#4dff4d" stroke="black" stroke-width="2"/>
+  <text x="320" y="255" text-anchor="middle" font-size="14" fill="black" font-weight="bold">Green</text>
+  <text x="320" y="275" text-anchor="middle" font-size="12" fill="black">テスト成功</text>
+
+  <!-- Green コメントボックス -->
+  <rect x="290" y="320" width="140" height="40" fill="#fff8dc"/>
+  <text x="300" y="335" font-size="12" fill="black">テストが成功する</text>
+  <text x="300" y="350" font-size="12" fill="black">最小限のコードを書く</text>
+
+  <!-- Refactorノード -->
+  <circle cx="80" cy="260" r="50" fill="#4dcfff" stroke="black" stroke-width="2"/>
+  <text x="80" y="255" text-anchor="middle" font-size="14" fill="black" font-weight="bold">Refactor</text>
+  <text x="80" y="275" text-anchor="middle" font-size="12" fill="black">リファクタリング</text>
+
+  <!-- 弧矢印: Red → Green -->
+  <path d="M220,110 C260,140 290,190 300,210" fill="none" stroke="gray" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="260" y="160" font-size="12" fill="gray">テストを通す実装</text>
+
+  <!-- 弧矢印: Green → Refactor -->
+  <path d="M270,280 C220,300 180,300 130,280" fill="none" stroke="gray" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="200" y="305" font-size="12" fill="gray" text-anchor="middle">コードの改善</text>
+
+  <!-- 弧矢印: Refactor → Red -->
+  <path d="M90,210 C120,170 150,140 180,110" fill="none" stroke="gray" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="50" y="170" font-size="12" fill="gray">新たな機能のテスト追加</text>
+
+  <!-- Refactor コメントボックス -->
+  <rect x="10" y="320" width="120" height="40" fill="#fff8dc"/>
+  <text x="20" y="335" font-size="12" fill="black">動作を保ったまま</text>
+  <text x="20" y="350" font-size="12" fill="black">設計を洗練させる</text>
+
+  <!-- TODOリスト（ノート風） -->
+  <rect x="30" y="10" width="110" height="110" rx="8" ry="8" fill="#f9f9f9" stroke="#bbb" stroke-width="1"/>
+  <text x="40" y="30" font-size="12" fill="black" font-weight="bold">📝 テストリスト</text>
+  <text x="40" y="50" font-size="12" fill="black">☐ ...</text>
+  <text x="40" y="65" font-size="12" fill="black">☐ ...</text>
+  <text x="40" y="80" font-size="12" fill="black">☐ ...</text>
+  <text x="40" y="95" font-size="12" fill="black">☐ ...</text>
+
+  <!-- TODOリスト → Red への矢印 -->
+<defs>
+  <marker id="boldArrowhead" markerWidth="8" markerHeight="4"
+          refX="4" refY="3" orient="auto">
+    <polygon points="1 1, 8 3, 0 4" fill="orange"/>
+  </marker>
+</defs>
+
+<path d="M140,60 L140,60 L160,60" fill="none" stroke="orange" stroke-width="4" marker-end="url(#boldArrowhead)"/>
+</svg>
