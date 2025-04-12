@@ -1,4 +1,5 @@
 # テスト駆動開発（TDD）
+TypeScriptとVitestで学ぶ、テスト駆動開発
 
 - [テスト駆動開発（TDD）とは](docs/what's-TDD.md)
 - [テストリストの作成と管理](docs/test-list-management.md)
@@ -17,4 +18,9 @@
    - コンポーネントのテスト (Web Components)
    - [状態変化をテストする](docs/collection-of-TDD-patterns-TypeScript/testing-state-changes.md)
    - [RxJSを使った状態変化をテストする](docs/collection-of-TDD-patterns-TypeScript/testing-state-changes-with-rxjs.md)
+   <!--
+   - コードカバレッジの可視化方法（vitest --coverageの活用）
+   - CIツール（GitHub Actions）での自動テスト実行例
+   - テストのアンチパターン集（例：複数のアサーション、依存状態あり等）
+   -->
 - [Web Components に TDD の適用は難しい](docs/applying-TDD-to-WebComponents-is-difficult.md)

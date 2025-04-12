@@ -11,3 +11,10 @@
 - コンポーネントのテスト (Web Components)
 - [状態変化をテストする](./testing-state-changes.md)
 - [RxJSを使った状態変化をテストする](./testing-state-changes-with-rxjs.md)
+
+
+<!--
+- コードカバレッジの可視化方法（vitest --coverageの活用）
+- CIツール（GitHub Actions）での自動テスト実行例
+- テストのアンチパターン集（例：複数のアサーション、依存状態あり等）
+-->

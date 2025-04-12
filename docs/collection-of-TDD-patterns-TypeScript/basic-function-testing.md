@@ -1,19 +1,20 @@
 # 基本的な関数のテスト
 
 TypeScriptでTDDを実践する際、最も基本となるのは純粋な関数のテストです。  
-このドキュメントでは、Vitestを使用してTypeScriptの関数をテストする基本的なパターンについて説明します。
+ここ、Vitestを使用してTypeScriptの関数をテストする基本的なパターンについて説明します。
 
 ## 目次
 
 1. [セットアップ](#セットアップ)
-2. [シンプルな関数のテスト](#シンプルな関数のテスト)
-3. [数値演算関数のテスト](#数値演算関数のテスト)
-4. [文字列操作関数のテスト](#文字列操作関数のテスト)
-5. [配列操作関数のテスト](#配列操作関数のテスト)
-6. [条件分岐を含む関数のテスト](#条件分岐を含む関数のテスト)
-7. [エラーハンドリングのテスト](#エラーハンドリングのテスト)
-8. [境界値のテスト](#境界値のテスト)
-9. [実践的なヒント](#実践的なヒント)
+2. [VitestをWatchモードで実行する](#vitestをwatchモードで実行する)
+3. [シンプルな関数のテスト](#シンプルな関数のテスト)
+4. [数値演算関数のテスト](#数値演算関数のテスト)
+5. [文字列操作関数のテスト](#文字列操作関数のテスト)
+6. [配列操作関数のテスト](#配列操作関数のテスト)
+7. [条件分岐を含む関数のテスト](#条件分岐を含む関数のテスト)
+8. [エラーハンドリングのテスト](#エラーハンドリングのテスト)
+9. [境界値のテスト](#境界値のテスト)
+10. [実践的なヒント](#実践的なヒント)
 
 
 ## セットアップ
@@ -35,8 +36,7 @@ npm install -D vitest
 {
   "scripts": {
     "test": "vitest run",
-    "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:watch": "vitest"
   }
 }
 ```
@@ -47,6 +47,8 @@ tsconfig.jsonにて、以下のようにTypeScriptの補完や型チェック �
 ```json
 {
   "compilerOptions": {
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": false,
     "types": ["vitest/globals"]
   }
 }
@@ -92,8 +94,9 @@ npm run test:watch
 最も基本的な例として、2つの数値を足し合わせる関数のテストから始めましょう。
 
 ### Red🔴： 失敗するテストを書く
-まず、テストファイルを作成します：`src/math.test.ts`
+まず、テストファイルを作成します。
 
+`src/math.test.ts`
 ```ts
 import { add } from "./math";
 
@@ -108,8 +111,9 @@ describe('add 関数', () => {
 
 ### Green🟢: テストを通すコードを書く
 
-次に、テストを通すための最小限のコードを実装します：`src/math.ts`
+次に、テストを通すための最小限のコードを実装します。
 
+`src/math.ts`
 ```ts
 export const add = (a: number, b: number): number => a + b;
 ```
@@ -124,7 +128,8 @@ export const add = (a: number, b: number): number => a + b;
 数値を扱う関数のテストでは、通常の計算だけでなく、特殊なケース（ゼロ除算、オーバーフローなど）も考慮する必要があります。
 
 ### 割り算関数のテスト例
-#### `src/math.test.ts`
+
+`src/math.test.ts`
 ```ts
 import { add, divide } from "./math";
 
@@ -150,17 +155,17 @@ describe('divide 関数', () => {
 
 ### 実装例
 
+`src/math.ts`
 ```ts
 export const divide = (a: number, b: number): number =>  a / b;
 ```
 
 ## 文字列操作関数のテスト
-
 文字列操作関数のテストでは、さまざまな入力パターンを考慮することが重要です。
 
 ### 文字列反転関数のテスト例
-#### `src/string.test.ts`
 
+`src/string.test.ts`
 ```ts
 import { reverseString } from './string';
 
@@ -235,7 +240,8 @@ export const filterEvenNumbers = (nums: number[]): Array<number> =>
 条件分岐を含む関数のテストでは、各分岐パスを確実にテストすることが重要です。
 
 ### 成績評価関数のテスト例
-#### `src/grade.test.ts`
+
+`src/grade.test.ts`
 ```ts
 import { getGrade } from './grade';
 
@@ -274,7 +280,8 @@ describe('スコア判定 関数', () => {
 ```
 
 ### 実装例
-#### `src/grade.ts`
+
+`src/grade.ts`
 ```ts
 export const getGrade = (score: number): string => {
   if (score >= 90) return 'A';
@@ -290,7 +297,8 @@ export const getGrade = (score: number): string => {
 関数が例外をスローする場合、そのエラーハンドリングロジックもテストする必要があります。
 
 ### エラーハンドリングのテスト例
-#### `src/validation.test.ts`
+
+`src/validation.test.ts`
 ```ts
 import { validateUsername } from './validation';
 
@@ -322,7 +330,8 @@ describe('validateUsername 関数', () => {
 ```
 
 ### 実装例
-#### `src/validation.ts`
+
+`src/validation.ts`
 ```ts
 export const validateUsername = (username: string): boolean => {
   if (username.length <= 3)
@@ -344,7 +353,8 @@ export const validateUsername = (username: string): boolean => {
 境界値テストは、関数の入力範囲の境界に特に注意を払います。
 
 ### 年齢検証関数のテスト例
-#### `src/age.test.ts`
+
+`src/age.test.ts`
 ```ts
 import { isAdult } from './age';
 
@@ -379,7 +389,8 @@ describe('isAdult 関数', () => {
 ```
 
 ### 実装例
-#### `src/age.ts`
+
+`src/age.ts`
 ```ts
 export const isAdult = (age: number): boolean => age >= 18;
 ```
@@ -403,6 +414,7 @@ TDDでは、一度に一つのテストケースを書いて、それを通過�
 ### 3. AAA（Arrange-Act-Assert）パターンを使用する
 
 テストを構造化するために、AAA（Arrange-Act-Assert）パターンを使用すると良いでしょう。
+
 ```ts
 describe('add 関数のテスト', () => {
 
@@ -436,21 +448,17 @@ describe('add 関数のテスト', () => {
 > - Arrange/Act/Assertの各セクションごとにトラブルシュートしやすい
 
 ### 4. テストの独立性を保つ
-
 各テストは他のテストに依存せず、順序に関係なく実行できるようにします。テスト間で状態を共有しないようにしましょう。
 
 ### 5. リファクタリングを恐れない
-
 テストがあることで、リファクタリングを安全に行うことができます。コードの振る舞いを変えずに、内部構造を改善するチャンスを逃さないようにしましょう。
 
 ## まとめ
-
 基本的な関数のテストは、TDDの基礎を身につけるための最適な出発点です。シンプルな関数からスタートし、徐々により複雑な関数のテストに進むことで、テスト駆動開発のスキルを着実に向上させることができます。
 
 次のセクションでは、[クラスとオブジェクト指向のテスト](./class-and-object-oriented-testing.md)について説明します。
 
 ## 参考資料
-
 - [Vitest公式ドキュメント](https://vitest.dev/)
 - [TypeScript公式ドキュメント](https://www.typescriptlang.org/docs/)
 - Kent Beck著「テスト駆動開発」
