@@ -11,7 +11,7 @@ TypeScriptとVitestで学ぶ、テスト駆動開発
    - [クラスとオブジェクト指向のテスト](docs/collection-of-TDD-patterns-TypeScript/class-and-object-oriented-testing.md)
    - [非同期処理のテスト](docs/collection-of-TDD-patterns-TypeScript/asynchronous-processing-testing.md)
    - [モックとスタブを使用したテスト](docs/collection-of-TDD-patterns-TypeScript/testing-with-mocks-and-stubs.md)
-   - HTTPリクエストのテスト
+   - [HTTPリクエストのテスト](docs/collection-of-TDD-patterns-TypeScript/testing-http-requests.md)
    - カスタムマッチャーを使ったテスト
    - パラメータ化テスト
    - スナップショットテスト
