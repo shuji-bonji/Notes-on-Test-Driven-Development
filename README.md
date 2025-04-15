@@ -13,7 +13,7 @@ TypeScriptとVitestで学ぶ、テスト駆動開発
    - [モックとスタブを使用したテスト](docs/collection-of-TDD-patterns-TypeScript/testing-with-mocks-and-stubs.md)
    - [HTTPリクエストのテスト](docs/collection-of-TDD-patterns-TypeScript/testing-http-requests.md)
       - [Mock Service Worker (MSW) とは](docs/collection-of-TDD-patterns-TypeScript/whats-mock-service-worker.md)
-   - カスタムマッチャーを使ったテスト
+   - [カスタムマッチャーを使ったテスト](./docs/collection-of-TDD-patterns-TypeScript/testing-with-custom-matchers.md)
    - パラメータ化テスト
    - スナップショットテスト
    - コンポーネントのテスト (Web Components)

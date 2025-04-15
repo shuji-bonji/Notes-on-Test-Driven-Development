@@ -6,7 +6,7 @@
 - [モックとスタブを使用したテスト](./testing-with-mocks-and-stubs.md)
 - [HTTPリクエストのテスト](./testing-http-requests.md)
    - [Mock Service Worker (MSW) とは](./whats-mock-service-worker.md)
-- カスタムマッチャーを使ったテスト
+- [カスタムマッチャーを使ったテスト](./testing-with-custom-matchers.md)
 - パラメータ化テスト
 - スナップショットテスト
 - コンポーネントのテスト (Web Components)
