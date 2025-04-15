@@ -617,20 +617,20 @@ HTTPリクエストでは、エラー処理が非常に重要です。
 様々なエラーシナリオをテストする例を見てみましょう。
 
 ### Red🔴： 失敗するテストを書く
-#### `src/services/apiErrorHandling.test.ts`
+#### `tests/apiErrorHandling.test.ts`
 
 ```ts
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { getUserData, handleApiError } from './apiErrorHandling';
+import { getUserData, handleApiError } from '../src/apiErrorHandling';
 
 describe('API Error Handling', () => {
-  let mock: MockAdapter;
-  
+  let mock: InstanceType<typeof MockAdapter>;
+
   beforeEach(() => {
     mock = new MockAdapter(axios);
   });
-  
+
   afterEach(() => {
     mock.reset();
   });
@@ -638,9 +638,9 @@ describe('API Error Handling', () => {
   it('ネットワークエラーを適切に処理する', async () => {
     // ネットワークエラーをシミュレート
     mock.onGet('/users/1').networkError();
-    
+
     const result = await handleApiError(() => getUserData(1));
-    
+
     expect(result.success).toBe(false);
     expect(result.error).toMatch(/network error/i);
   });
@@ -648,18 +648,18 @@ describe('API Error Handling', () => {
   it('タイムアウトエラーを適切に処理する', async () => {
     // タイムアウトをシミュレート
     mock.onGet('/users/1').timeout();
-    
+
     const result = await handleApiError(() => getUserData(1));
-    
+
     expect(result.success).toBe(false);
     expect(result.error).toMatch(/timeout/i);
   });
 
   it('404エラーを適切に処理する', async () => {
     mock.onGet('/users/999').reply(404, { message: 'User not found' });
-    
+
     const result = await handleApiError(() => getUserData(999));
-    
+
     expect(result.success).toBe(false);
     expect(result.error).toMatch(/not found/i);
     expect(result.statusCode).toBe(404);
@@ -667,9 +667,9 @@ describe('API Error Handling', () => {
 
   it('500エラーを適切に処理する', async () => {
     mock.onGet('/users/1').reply(500, { message: 'Internal server error' });
-    
+
     const result = await handleApiError(() => getUserData(1));
-    
+
     expect(result.success).toBe(false);
     expect(result.error).toMatch(/server error/i);
     expect(result.statusCode).toBe(500);
@@ -678,17 +678,18 @@ describe('API Error Handling', () => {
   it('正常なレスポンスを適切に処理する', async () => {
     const userData = { id: 1, name: 'Test User' };
     mock.onGet('/users/1').reply(200, userData);
-    
+
     const result = await handleApiError(() => getUserData(1));
-    
+
     expect(result.success).toBe(true);
     expect(result.data).toEqual(userData);
   });
 });
+
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/services/apiErrorHandling.ts`
+#### `src/apiErrorHandling.ts`
 
 ```ts
 import axios, { AxiosError } from 'axios';
@@ -705,46 +706,49 @@ interface ApiResult<T> {
   statusCode?: number;
 }
 
-export async function handleApiError<T>(apiCall: () => Promise<T>): Promise<ApiResult<T>> {
+export async function handleApiError<T>(
+  apiCall: () => Promise<T>
+): Promise<ApiResult<T>> {
   try {
     const data = await apiCall();
     return {
       success: true,
-      data
+      data,
     };
   } catch (error) {
     if (axios.isAxiosError(error)) {
       const axiosError = error as AxiosError;
-      
+
       if (axiosError.response) {
         // サーバーからのエラーレスポンス (4xx, 5xx)
         return {
           success: false,
           error: axiosError.response.data?.message || axiosError.message,
-          statusCode: axiosError.response.status
+          statusCode: axiosError.response.status,
         };
       } else if (axiosError.request) {
         // リクエストは作成されたがレスポンスが受信されなかった
         return {
           success: false,
-          error: 'Network error: No response received'
+          error: 'Network error: No response received',
         };
       } else {
         // リクエスト作成中にエラーが発生した
         return {
           success: false,
-          error: `Request setup error: ${axiosError.message}`
+          error: `Request setup error: ${axiosError.message}`,
         };
       }
     } else {
       // その他のエラー
       return {
         success: false,
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: error instanceof Error ? error.message : 'Unknown error',
       };
     }
   }
 }
+
 ```
 
 
