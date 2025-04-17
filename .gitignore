@@ -1,0 +1,30 @@
+# Node.js の依存パッケージ
+node_modules/
+
+# VitePress のビルド生成物
+docs/.vitepress/dist/
+
+# Vite/VitePress のキャッシュ
+.vite/
+.vitepress/cache/
+
+# テストカバレッジやスナップショット
+coverage/
+__snapshots__/
+
+# ローカル IDE 設定やエディタ用ファイル
+.vscode/
+*.swp
+*.swo
+*.log
+
+# macOS の隠しファイル
+.DS_Store
+
+# 一時ファイルやバックアップ
+*.tmp
+*.bak
+*~
+
+# 画像出力ディレクトリ（自動生成される場合）
+public/generated/

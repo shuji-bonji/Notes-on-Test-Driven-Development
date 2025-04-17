@@ -1,1 +1,0 @@
-import{_ as e,c as i,o as l,ag as a}from"./chunks/framework.BdLwk_4I.js";const T=JSON.parse('{"title":"テスト駆動開発（TDD）","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),o={name:"README.md"};function s(c,t,r,n,p,h){return l(),i("div",null,t[0]||(t[0]=[a("",3)]))}const f=e(o,[["render",s]]);export{T as __pageData,f as default};
