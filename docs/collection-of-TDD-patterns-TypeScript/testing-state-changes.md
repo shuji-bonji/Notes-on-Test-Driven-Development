@@ -11,9 +11,9 @@
 - 口座が凍結されている場合は出金できない。
 - 閉鎖された口座は一切の操作を受け付けない。
 
-### Step 1: 初期残高の取得
-
-#### Red: `bankAccount.test.ts`
+## Step 1: 初期残高の取得
+### Red🔴： 失敗するテストを書く
+#### `bankAccount.test.ts`
 ```ts
 import { BankAccount } from '../../src/domain/bankAccount';
 
@@ -24,8 +24,8 @@ describe('銀行口座', () => {
   });
 });
 ```
-
-#### Green: `bankAccount.ts`
+### Green🟢: テストを通すコードを書く
+#### `bankAccount.ts`
 ```ts
 export class BankAccount {
   private balance: number;
@@ -40,9 +40,10 @@ export class BankAccount {
 }
 ```
 
-### Step 2: 入金による残高増加
+## Step 2: 入金による残高増加
 
-#### Red: `bankAccount.test.ts`
+### Red🔴： 失敗するテストを書く
+#### `bankAccount.test.ts`
 ```ts
 import { BankAccount } from '../../src/domain/bankAccount';
 
@@ -59,8 +60,8 @@ describe('銀行口座', () => {
   });
 });
 ```
-
-#### Green: `bankAccount.ts`
+### Green🟢: テストを通すコードを書く
+#### `bankAccount.ts`
 ```ts
 export class BankAccount {
   private balance: number;
@@ -79,9 +80,9 @@ export class BankAccount {
 }
 ```
 
-### Step 3: 出金による残高減少
-
-#### Red: `bankAccount.test.ts`
+## Step 3: 出金による残高減少
+### Red🔴： 失敗するテストを書く
+#### `bankAccount.test.ts`
 ```ts
 import { BankAccount } from '../../src/domain/bankAccount';
 
@@ -104,8 +105,8 @@ describe('銀行口座', () => {
   });
 });
 ```
-
-#### Green: `bankAccount.ts`
+### Green🟢: テストを通すコードを書く
+#### `bankAccount.ts`
 ```ts
 export class BankAccount {
   private balance: number;
@@ -128,9 +129,9 @@ export class BankAccount {
 }
 ```
 
-### Step 4: 残高不足時の例外スロー
-
-#### Red: `bankAccount.test.ts`
+## Step 4: 残高不足時の例外スロー
+### Red🔴： 失敗するテストを書く
+#### `bankAccount.test.ts`
 ```ts
 import { BankAccount } from '../../src/domain/bankAccount';
 
@@ -161,7 +162,8 @@ describe('銀行口座', () => {
 });
 ```
 
-#### Green: `bankAccount.ts`
+### Green🟢: テストを通すコードを書く
+#### `bankAccount.ts`
 ```ts
 export class BankAccount {
   private balance: number;
@@ -187,7 +189,8 @@ export class BankAccount {
 }
 ```
 
-#### Refactor: `bankAccount.test.ts`
+### Refactor🔵: リファクタリングを行う
+#### `bankAccount.test.ts`
 
 - テストを整理（describe ブロック）
 - マジックナンバーを定数に
@@ -227,7 +230,7 @@ describe('BankAccount クラスのテスト', () => {
 });
 ```
 
-#### Refactor:  `bankAccount.ts`
+#### `bankAccount.ts`
 ```ts
 export class BankAccount {
   private balance: number;
@@ -278,6 +281,8 @@ export class BankAccount {
 
 これにより、状態ごとの期待振る舞いが明確になり、テストによって仕様が保証されました。
 
+### Red🔴： 失敗するテストを書く
+#### `bankAccount`
 ```ts
 import { BankAccount } from '../../src/domain/bankAccount';
 
@@ -361,8 +366,8 @@ stateDiagram-v2
 
     Closed --> [*] : 操作不可（終端）
 ```
-
-### 抽象状態インターフェース `accountState.ts`
+### Green🟢: テストを通すコードを書く => Refactor🔵: リファクタリングを行う
+#### 抽象状態インターフェース `accountState.ts`
 
 ```ts
 interface AccountState {
@@ -374,7 +379,7 @@ interface AccountState {
 }
 ```
 
-### 利用状態クラスの実装 `activeState.ts`
+####  利用状態クラスの実装 `activeState.ts`
 
 ```ts
 import { AccountState } from './accountState';
@@ -408,7 +413,7 @@ export class ActiveState implements AccountState {
 }
 ```
 
-### 凍結状態クラスの実装 `frozenState.ts`
+####  凍結状態クラスの実装 `frozenState.ts`
 
 ```ts
 import { AccountState } from './accountState';
@@ -439,7 +444,7 @@ export class FrozenState implements AccountState {
 }
 ```
 
-### 閉鎖状態クラスの実装 `closedState.ts`
+#### 閉鎖状態クラスの実装 `closedState.ts`
 
 ```ts
 import { AccountState } from './accountState';
@@ -467,7 +472,7 @@ export class ClosedState implements AccountState {
 }
 ```
 
-### BankAccount クラスのリファクタ （状態を委譲）  `bankAccount.ts`
+####  BankAccount クラスのリファクタ （状態を委譲）  `bankAccount.ts`
 
 ```ts
 import { AccountState } from './accountState';
@@ -522,8 +527,8 @@ export class BankAccount {
 }
 ```
 
-### テスト結果
-```
+#### テスト結果
+```sh
 DEV  v3.1.1 /Users/bonji/workspace/study/tdd/ts-vite-vitest
 
  ✓ tests/utils/leap-year.test.ts (6 tests) 2ms

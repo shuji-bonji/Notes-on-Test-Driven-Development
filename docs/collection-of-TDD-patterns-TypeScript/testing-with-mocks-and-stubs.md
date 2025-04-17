@@ -114,7 +114,7 @@ const result3 = await asyncMock(); // '成功'
 外部サービス（API、データベースなど）への依存をモック化することで、テストを高速かつ信頼性の高いものにすることができます。
 
 ### Red🔴: 失敗するテストを書く
-#### `tests/apiService.test.ts`
+#### `apiService.test.ts`
 
 ```ts
 import { UserService } from '../src/userService';
@@ -164,7 +164,7 @@ describe('UserService', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/userService.ts`
+#### `userService.ts`
 ```ts
 import { HttpClient } from './httpClient';
 
@@ -181,7 +181,7 @@ export class UserService {
   }
 }
 ```
-#### `src/httpClient.ts`
+#### `httpClient.ts`
 ```ts
 export interface HttpClient {
   get(url: string): Promise<any>;
@@ -195,7 +195,7 @@ export interface HttpClient {
 ### データベースアクセスのモック例
 
 ### Red🔴: 失敗するテストを書く
-#### `tests/userRepository.test.ts`
+#### `userRepository.test.ts`
 
 ```ts
 import { UserRepository } from '../src/userRepository';
@@ -251,7 +251,7 @@ describe('UserRepository', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/database.ts`
+#### `database.ts`
 
 ```ts
 import { DatabaseConnection } from './database';
@@ -275,7 +275,7 @@ export class UserRepository {
   }
 }
 ```
-#### `src/database.ts`
+#### `database.ts`
 ```ts
 import { UserDate } from './userRepository';
 
@@ -291,7 +291,7 @@ export interface DatabaseConnection {
 ### 通知サービスの例
 
 ### Red🔴: 失敗するテストを書く
-#### `tests/notificationService.test.ts`
+#### `notificationService.test.ts`
 
 ```ts
 import { NotificationService } from '../src/notificationService';
@@ -388,7 +388,7 @@ describe('NotificationService', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/interfaces.ts`
+#### `interfaces.ts`
 ```ts
 export interface User {
   id: string;
@@ -405,7 +405,7 @@ export interface SmsSender {
 }
 ```
 
-#### `src/notificationService.ts`
+#### `notificationService.ts`
 ```ts
 import { EmailSender, SmsSender, User } from './interfaces';
 
@@ -440,7 +440,7 @@ Vitestの`vi.mock()`を使用して、モジュールのすべてのエクスポ
 
 
 ### Red🔴: 失敗するテストを書く
-#### `tests/userImporter.test.ts`
+#### `userImporter.test.ts`
 
 ```ts
 import { importUsersFromApi } from '../src/userImporter';
@@ -502,7 +502,7 @@ describe('importUsersFromApi', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/userImporter.ts`
+#### `userImporter.ts`
 
 ```ts
 import axios from 'axios';
@@ -540,7 +540,7 @@ export const importUsersFromApi = async () => {
 ## 自作モジュールのモック化
 
 ### Red🔴: 失敗するテストを書く
-#### テスト例 (Red): `tests/userController.test.ts`
+#### `userController.test.ts`
 
 ```ts
 import { vi, describe, it, expect, beforeEach } from 'vitest';
@@ -643,7 +643,7 @@ describe('UserController', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/userController.ts`
+#### `userController.ts`
 
 ```ts
 import { Request, Response } from 'express';

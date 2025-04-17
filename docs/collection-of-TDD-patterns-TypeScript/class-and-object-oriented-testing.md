@@ -78,7 +78,7 @@ export default defineConfig({
 
 ### Red🔴: 失敗するテストを書く
 
-`tests/counter.test.ts`
+#### `counter.test.ts`
 ```ts
 import { Counter } from '../src/counter';
 
@@ -118,7 +118,7 @@ describe('Counter クラス', () => {
 
 ### Green🟢: テストを通すコードを書く
 
-`src/counter.ts`:
+#### `counter.ts`:
 
 ```ts
 export class Counter {
@@ -155,7 +155,7 @@ export class Counter {
 
 ### Red🔴: 失敗するテストを書く
 
-`tests/email.test.ts`
+#### `email.test.ts`
 ```ts
 import { Email } from '../src/email';
 
@@ -204,7 +204,7 @@ describe('Email クラス', () => {
 
 ### Green🟢: テストを通すコードを書く
 
-`src/email.ts`
+#### `email.ts`
 ```ts
 export class Email {
   readonly value: string;
@@ -242,7 +242,7 @@ export class Email {
 
 ### Red🔴: 失敗するテストを書く
 
-`tests/shopping-cart.test.ts`
+#### `shopping-cart.test.ts`
 ```ts
 import { Product, ShoppingCart } from '../src/shopping-cart';
 
@@ -312,7 +312,7 @@ describe('ShoppingCart クラス', () => {
 
 ### Green🟢: テストを通すコードを書く
 
-`src/shopping-cart.ts`
+#### `shopping-cart.ts`
 ```ts
 export type Product = {
   id: string;
@@ -383,7 +383,7 @@ ShoppingCartクラスのテストでは、テスト用のFixtureを作成した�
 
 ### Red🔴: 失敗するテストを書く
 
-`tests/shape.test.ts`
+#### `shape.test.ts`
 ```ts
 import { Shape, Circle, Rectangle } from '../src/shape';
 
@@ -453,7 +453,7 @@ describe('Shape クラス階層', () => {
 
 ### Green🟢: テストを通すコードを書く
 
-`src/shape.ts`
+#### `shape.ts`
 ```ts
 export class Shape {
   constructor(private name: string) {}
@@ -512,7 +512,7 @@ TypeScriptのインターフェースを実装するクラスをテストする�
 
 ### Red🔴: 失敗するテストを書く
 
-`tests/logger.test.ts`
+#### `logger.test.ts`
 ```ts
 import { ConsoleLogger, FileLogger, ILogger } from '../src/logger';
 import type { MockInstance } from 'vitest';
@@ -602,7 +602,7 @@ describe('FileLogger', () => {
 
 ### Green🟢: テストを通すコードを書く
 
-`src/logger.ts`
+#### `logger.ts`
 ```ts
 import { appendFileSync } from 'fs';
 export interface ILogger {
@@ -651,7 +651,7 @@ export class FileLogger implements ILogger {
 
 ### Red🔴: 失敗するテストを書く
 
-`tests/user-service.test.ts`
+#### `user-service.test.ts`
 ```ts
 import { UserService } from '../src/user-service';
 import { IUserRepository, User } from '../src/user-repository';
@@ -743,7 +743,7 @@ describe('UserService', () => {
 
 ### Green🟢: テストを通すコードを書く
 
-`src/user-repository.ts`
+#### `user-repository.ts`
 ```ts
 export type User = {
   id: string;
@@ -760,7 +760,7 @@ export interface IUserRepository {
 
 ```
 
-`src/user-service.ts`
+#### `user-service.ts`
 ```ts
 import { IUserRepository, User } from './user-repository';
 
@@ -806,7 +806,7 @@ export class UserService {
 
 ### Red🔴: 失敗するテストを書く
 
-`tests/calculator.test.ts`
+#### `calculator.test.ts`
 ```ts
 import { PriceCalculator } from '../src/calculator';
 
@@ -873,7 +873,7 @@ describe('PriceCalculator', () => {
 
 ### Green🟢: テストを通すコードを書く
 
-`src/calculator.ts`
+#### `calculator.ts`
 ```ts
 export class PriceCalculator {
   constructor() {}
@@ -911,7 +911,7 @@ export class PriceCalculator {
 
 ### Red🔴: 失敗するテストを書く
 
-`tests/bank-account.test.ts`
+#### `bank-account.test.ts`
 ```ts
 import {
   BankAccount,
@@ -1047,7 +1047,7 @@ describe('BankAccount クラス', () => {
 
 ### Green🟢: テストを通すコードを書く
 
-`src/bank-account.ts`
+#### `bank-account.ts`
 ```ts
 export class InsufficientFundsError implements Error {
   name: string = '残高不足';

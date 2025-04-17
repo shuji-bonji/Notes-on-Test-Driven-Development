@@ -33,7 +33,7 @@
 Promiseを返す関数のテストは、テスト関数からPromiseを返すことで行います。
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/api.test.ts`
+#### `api.test.ts`
 
 ```ts
 import { fetchUserData } from '../src/api';
@@ -57,7 +57,7 @@ describe('fetchUserData 関数', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/api.ts`
+#### `api.ts`
 
 ```ts
 interface UserData {
@@ -101,7 +101,7 @@ describe('複合API操作', () => {
 async/awaitを使用すると、非同期コードをより読みやすく、同期コードのように書くことができます。
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/authentication.test.ts`
+#### `authentication.test.ts`
 
 ```ts
 import { loginUser } from '../src/authentication';
@@ -123,7 +123,7 @@ describe('loginUser 関数', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/authentication.ts`
+#### `authentication.ts`
 ```ts
 type User = {
   id: string;
@@ -160,8 +160,7 @@ export const loginUser = (userName: string, password: string): LoginResult => {
 ### エラーハンドリングの例
 async/awaitを使用したエラーハンドリングのテスト。
 
-
-#### `tests/api.test.ts`
+#### `api.test.ts`
 >  it('ユーザーIDが無効な場合、エラーをスローする', () => {
 
 の部分を書き換えてみる。
@@ -183,7 +182,7 @@ async/await とタイマー処理を組み合わせると、非同期処理の�
 `vi.useFakeTimers()` によるモック化と `vi.advanceTimersByTime()` による時間の進行は、こうした制御を可能にする強力なツールです。
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/timer.test.ts`
+#### `timer.test.ts`
 
 ```ts
 import { delayedGreeting, pollData } from '../src/timer';
@@ -228,7 +227,7 @@ describe('タイマー関数', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/timer.ts`
+#### `timer.ts`
 
 ```ts
 export const delayedGreeting = (
@@ -256,7 +255,7 @@ export const pollData = (callback: Function, interval: number): void => {
 非同期処理におけるエラー処理のテストは重要です。特に、非同期操作が失敗した場合の挙動を確認する必要があります。
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/errorHandling.test.ts`
+#### `errorHandling.test.ts`
 
 ```ts
 import { fetchWithRetry } from './errorHandling';
@@ -295,7 +294,7 @@ describe('fetchWithRetry 関数', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/errorHandling.ts`
+#### `errorHandling.ts`
 
 ```ts
 export const fetchWithRetry = async <T>(
@@ -322,7 +321,7 @@ export const fetchWithRetry = async <T>(
 ## 並列非同期処理のテスト
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/parallel.test.ts`
+#### `parallel.test.ts`
 ```ts
 import { loadAll } from '../src/parallel';
 
@@ -335,7 +334,7 @@ describe('loadAll 関数', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/parallel.ts`
+#### `parallel.ts`
 ```ts
 export const loadAll = async (ids: string[]): Promise<string[]> => {
   return Promise.all(ids.map(async (id) => `Loaded-${id}`));
@@ -348,7 +347,7 @@ export const loadAll = async (ids: string[]): Promise<string[]> => {
 これをテストするには、非同期処理の完了順序を制御する必要があります。
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/race.test.ts`
+#### `race.test.ts`
 
 ```ts
 import { fetchFirstData, fetchLatestData } from '../src/race';
@@ -381,7 +380,7 @@ describe('fetchLatestData 関数', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/race.ts`
+#### `race.ts`
 
 ```ts
 export const fetchFirstData = (

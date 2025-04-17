@@ -14,7 +14,7 @@ TypeScriptとVitestで学ぶ、テスト駆動開発
    - [HTTPリクエストのテスト](docs/collection-of-TDD-patterns-TypeScript/testing-http-requests.md)
       - [Mock Service Worker (MSW) とは](docs/collection-of-TDD-patterns-TypeScript/whats-mock-service-worker.md)
    - [カスタムマッチャーを使ったテスト](./docs/collection-of-TDD-patterns-TypeScript/testing-with-custom-matchers.md)
-   - パラメータ化テスト
+   - [パラメータ化テスト](./docs/collection-of-TDD-patterns-TypeScript/parameterized-testing.md)
    - スナップショットテスト
    - コンポーネントのテスト (Web Components)
    - [状態変化をテストする](docs/collection-of-TDD-patterns-TypeScript/testing-state-changes.md)

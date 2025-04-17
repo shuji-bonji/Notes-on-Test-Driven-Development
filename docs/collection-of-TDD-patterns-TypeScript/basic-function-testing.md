@@ -96,7 +96,7 @@ npm run test:watch
 ### Red🔴： 失敗するテストを書く
 まず、テストファイルを作成します。
 
-`src/math.test.ts`
+#### `math.test.ts`
 ```ts
 import { add } from "./math";
 
@@ -113,7 +113,7 @@ describe('add 関数', () => {
 
 次に、テストを通すための最小限のコードを実装します。
 
-`src/math.ts`
+#### `math.ts`
 ```ts
 export const add = (a: number, b: number): number => a + b;
 ```
@@ -127,9 +127,8 @@ export const add = (a: number, b: number): number => a + b;
 ## 数値演算関数のテスト
 数値を扱う関数のテストでは、通常の計算だけでなく、特殊なケース（ゼロ除算、オーバーフローなど）も考慮する必要があります。
 
-### 割り算関数のテスト例
-
-`src/math.test.ts`
+### Red🔴： 失敗するテストを書く
+#### `math.test.ts`
 ```ts
 import { add, divide } from "./math";
 
@@ -153,9 +152,8 @@ describe('divide 関数', () => {
 });
 ```
 
-### 実装例
-
-`src/math.ts`
+### Green🟢: テストを通すコードを書く
+#### `math.ts`
 ```ts
 export const divide = (a: number, b: number): number =>  a / b;
 ```
@@ -163,9 +161,8 @@ export const divide = (a: number, b: number): number =>  a / b;
 ## 文字列操作関数のテスト
 文字列操作関数のテストでは、さまざまな入力パターンを考慮することが重要です。
 
-### 文字列反転関数のテスト例
-
-`src/string.test.ts`
+### Red🔴： 失敗するテストを書く
+#### `string.test.ts`
 ```ts
 import { reverseString } from './string';
 
@@ -192,8 +189,8 @@ describe('文字操作関数', () => {
 });
 ```
 
-### 実装例
-#### `src/string.ts`
+### Green🟢: テストを通すコードを書く
+#### `string.ts`
 ```ts
 export const reverseString = (str: string): string => 
   str.split('').reverse().join('');
@@ -203,8 +200,9 @@ export const reverseString = (str: string): string =>
 ## 配列操作関数のテスト
 配列操作関数のテストでは、空の配列、大きな配列、異なる型の要素を含む配列など、さまざまなケースを考慮します。
 
-### 配列フィルター関数のテスト例
-#### `src/array.test.ts`
+
+### Red🔴： 失敗するテストを書く
+#### `array.test.ts`
 ```ts
 import { filterEvenNumbers } from "./array";
 
@@ -227,8 +225,8 @@ describe('filterEvenNumbers 関数', () => {
 });
 ```
 
-### 実装例
-#### `src/array.ts`
+### Green🟢: テストを通すコードを書く
+#### `array.ts`
 ```ts
 export const filterEvenNumbers = (nums: number[]): Array<number> =>
   nums.filter((num) => num % 2 === 0);
@@ -239,9 +237,8 @@ export const filterEvenNumbers = (nums: number[]): Array<number> =>
 ## 条件分岐を含む関数のテスト
 条件分岐を含む関数のテストでは、各分岐パスを確実にテストすることが重要です。
 
-### 成績評価関数のテスト例
-
-`src/grade.test.ts`
+### Red🔴： 失敗するテストを書く
+#### `grade.test.ts`
 ```ts
 import { getGrade } from './grade';
 
@@ -279,9 +276,8 @@ describe('スコア判定 関数', () => {
 
 ```
 
-### 実装例
-
-`src/grade.ts`
+### Green🟢: テストを通すコードを書く
+#### `grade.ts`
 ```ts
 export const getGrade = (score: number): string => {
   if (score >= 90) return 'A';
@@ -296,9 +292,9 @@ export const getGrade = (score: number): string => {
 ## エラーハンドリングのテスト
 関数が例外をスローする場合、そのエラーハンドリングロジックもテストする必要があります。
 
-### エラーハンドリングのテスト例
+### Red🔴： 失敗するテストを書く
 
-`src/validation.test.ts`
+#### `validation.test.ts`
 ```ts
 import { validateUsername } from './validation';
 
@@ -329,9 +325,9 @@ describe('validateUsername 関数', () => {
 });
 ```
 
-### 実装例
+### Green🟢: テストを通すコードを書く
 
-`src/validation.ts`
+#### `validation.ts`
 ```ts
 export const validateUsername = (username: string): boolean => {
   if (username.length <= 3)
@@ -352,9 +348,9 @@ export const validateUsername = (username: string): boolean => {
 ## 境界値のテスト
 境界値テストは、関数の入力範囲の境界に特に注意を払います。
 
-### 年齢検証関数のテスト例
+### Red🔴： 失敗するテストを書く
 
-`src/age.test.ts`
+#### `age.test.ts`
 ```ts
 import { isAdult } from './age';
 
@@ -388,9 +384,9 @@ describe('isAdult 関数', () => {
 });
 ```
 
-### 実装例
+### Green🟢: テストを通すコードを書く
 
-`src/age.ts`
+#### `age.ts`
 ```ts
 export const isAdult = (age: number): boolean => age >= 18;
 ```

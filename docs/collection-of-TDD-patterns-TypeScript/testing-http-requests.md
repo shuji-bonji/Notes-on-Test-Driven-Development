@@ -49,7 +49,7 @@ npm install axios axios-mock-adapter --save-dev
 ```
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/userApi.test.ts`
+#### `userApi.test.ts`
 
 ```ts
 import axios from 'axios';
@@ -135,7 +135,7 @@ describe('User API', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/userApi.ts`
+#### `userApi.ts`
 
 ```ts
 import axios from 'axios';
@@ -192,7 +192,7 @@ export const deleteUser = async (userId: string): Promise<boolean> => {
 ----
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/UserApiClient.test.ts`
+#### `UserApiClient.test.ts`
 
 ```ts
 import axios from 'axios';
@@ -317,7 +317,7 @@ describe('UserApiClient', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/UserApiClient.ts`
+#### `UserApiClient.ts`
 
 ```ts
 import axios from 'axios';
@@ -370,7 +370,7 @@ export class UserApiClient {
 より柔軟なテストを行うために、HTTPクライアントを依存性として注入する方法もあります。
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/HttpUserApiClient.test.ts`
+#### `HttpUserApiClient.test.ts`
 
 ```ts
 import { HttpUserApiClient } from '../src/HttpUserApiClient';
@@ -423,7 +423,7 @@ describe('HttpUserApiClient', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### HttpClientインターフェース: `src/HttpClient.ts`
+#### `HttpClient.ts`
 
 ```ts
 export interface HttpClient {
@@ -434,7 +434,7 @@ export interface HttpClient {
 }
 ```
 
-#### `src/HttpUserApiClient.ts`
+#### `HttpUserApiClient.ts`
 
 ```ts
 import { HttpClient } from './_httpClient';
@@ -515,7 +515,7 @@ server.listen(port, () => {
 ```
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/services/realApiClient.test.ts`
+#### `realApiClient.test.ts`
 
 ```ts
 import axios from 'axios';
@@ -617,7 +617,7 @@ HTTPリクエストでは、エラー処理が非常に重要です。
 様々なエラーシナリオをテストする例を見てみましょう。
 
 ### Red🔴： 失敗するテストを書く
-#### `tests/apiErrorHandling.test.ts`
+#### `apiErrorHandling.test.ts`
 
 ```ts
 import axios from 'axios';
@@ -689,7 +689,7 @@ describe('API Error Handling', () => {
 ```
 
 ### Green🟢: テストを通すコードを書く
-#### `src/apiErrorHandling.ts`
+#### `apiErrorHandling.ts`
 
 ```ts
 import axios, { AxiosError } from 'axios';

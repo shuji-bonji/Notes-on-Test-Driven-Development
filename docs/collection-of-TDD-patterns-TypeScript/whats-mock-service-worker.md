@@ -29,7 +29,7 @@ npm install msw@latest --save-dev
 
 ### 1. RESTハンドラーの定義
 
-#### `tests/mocks/handlers.ts`
+#### `mocks/handlers.ts`
 ```ts
 import { http, HttpResponse } from 'msw';
 
@@ -92,7 +92,7 @@ export const handlers = [
 
 
 ### 2. ブラウザ環境でのセットアップ
-#### `tests/mocks/browser.ts`
+#### `mocks/browser.ts`
 ```ts
 import { setupWorker } from 'msw/browser';
 import { handlers } from './handlers';
@@ -122,7 +122,7 @@ npx msw init public/ --save
 ```
 
 ### 3. Node.js環境（テスト）でのセットアップ
-#### `tests/mocks/server.ts`
+#### `mocks/server.ts`
 ```ts
 import { setupServer } from 'msw/node'
 import { handlers } from './handlers'
@@ -130,7 +130,7 @@ import { handlers } from './handlers'
 // テスト用サーバーのセットアップ
 export const server = setupServer(...handlers)
 ```
-#### `tests/setupTests.ts`
+#### `setupTests.ts`
 ```ts
 import { server } from './mocks/server'
 
@@ -147,7 +147,7 @@ afterAll(() => server.close())
 
 ## Vitestでの使用例
 ### Red🔴： 失敗するテストを書く
-#### `tests/userService.test.ts`
+#### `userService.test.ts`
 ```ts
 import { describe, it, expect, beforeAll, afterEach, afterAll } from 'vitest';
 import { server } from './mocks/server';

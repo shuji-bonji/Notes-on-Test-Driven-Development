@@ -10,8 +10,8 @@
 - 現在の値を購読できるObservable
 - 特定の値に達したときのイベント通知
 
-### Step1
-#### Red: `test/service/counter.test.ts`
+### Red🔴： 失敗するテストを書く
+#### `counter.test.ts`
 
 ```ts
 import { describe, it, expect, beforeEach, vi } from 'vitest';
@@ -137,8 +137,8 @@ describe('CounterService', () => {
 });
 
 ```
-
-#### Green: `src/service/counter..ts`
+### Green🟢: テストを通すコードを書く
+#### `counter.ts`
 ```ts
 import { BehaviorSubject, Subject } from 'rxjs';
 import { distinctUntilChanged, filter } from 'rxjs/operators';
