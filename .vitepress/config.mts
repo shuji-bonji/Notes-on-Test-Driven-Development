@@ -9,12 +9,35 @@ export default defineConfig({
   srcDir: './docs',
   // GitHub Pagesなどにデプロイする場合のベースパス
   base: '/Notes-on-Test-Driven-Development/',
-
+  head: [
+    [
+      'meta',
+      { property: 'og:title', content: 'Notes on Test-Driven Development' },
+    ],
+    [
+      'meta',
+      {
+        property: 'og:description',
+        content: 'TypeScript で学ぶ TDD パターン集',
+      },
+    ],
+    [
+      'meta',
+      {
+        property: 'og:image',
+        content:
+          'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/images/tdd-cycle.png',
+      },
+    ],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      // { text: 'Examples', link: '/markdown-examples' },
+      {
+        text: 'TypeScriptでのTDDパターン集',
+        link: '/collection-of-TDD-patterns-TypeScript/',
+      },
     ],
 
     sidebar: [
@@ -68,6 +91,15 @@ export default defineConfig({
           {
             text: 'RxJSを使った状態変化をテストする',
             link: '/collection-of-TDD-patterns-TypeScript/testing-state-changes-with-rxjs',
+          },
+        ],
+      },
+      {
+        text: 'その他',
+        items: [
+          {
+            text: 'Web Components に TDD の適用は難しい',
+            link: '/applying-TDD-to-WebComponents-is-difficult',
           },
         ],
       },

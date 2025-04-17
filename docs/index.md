@@ -18,6 +18,9 @@ hero:
       link: /collection-of-TDD-patterns-TypeScript/
 
 features:
+  - title: テストリストの作成と管理
+    details: TDDにおいて最初に行う重要なプラクティス
+    link: test-list-management
   - title: Red 🔴 - 失敗するテストの書き方
     details: テストを書くことから開発を始め、仕様を明確にする手法について学びます。
     link: /testing-in-TDD
@@ -27,5 +30,11 @@ features:
   - title: Refactor 🔵 - 品質向上のための実践手法
     details: 動作を変えずにコードを改善する効果的なリファクタリング手法を学びます。
     link: /refactoring-in-TDD
----
+  # - title: TypeScriptでのTDDパターン集
+  #   details: TypeScriptでのテストパターン集目次
+  #   link: /collection-of-TDD-patterns-TypeScript
+  # - title: Web Components に TDD の適用は難しい
+  #   details: なぜ Web Components に TDD をそのまま適用するのが難しいのか？
+  #   link: /applying-TDD-to-WebComponents-is-difficult
 
+---
