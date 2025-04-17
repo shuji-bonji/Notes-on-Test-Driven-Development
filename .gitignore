@@ -6,7 +6,7 @@ docs/.vitepress/dist/
 
 # Vite/VitePress のキャッシュ
 .vite/
-.vitepress/cache/
+docs/.vitepress/cache/
 
 # テストカバレッジやスナップショット
 coverage/
