@@ -822,4 +822,4 @@ mockUserRepo.findById.mockResolvedValue({ id: 1, name: 'Test User' });
 ## まとめ
 モックとスタブはテスト駆動開発において強力なツールですが、適切に使用することが重要です。外部依存を隔離し、テストの実行速度と信頼性を向上させながらも、テストが実際のシステムの動作を正確に反映するようにバランスを取りましょう。
 
-次のセクションでは、[HTTPリクエストのテスト](docs/collection-of-TDD-patterns-TypeScript/testing-http-requests.md)方法についてです。
+次のセクションでは、[HTTPリクエストのテスト](testing-http-requests.md)方法についてです。

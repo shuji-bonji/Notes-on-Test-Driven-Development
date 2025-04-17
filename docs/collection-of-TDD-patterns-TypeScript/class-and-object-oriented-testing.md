@@ -1233,7 +1233,7 @@ it('ユーザーを非同期で取得できる', async () => {
 
 適切なテストを書くことで、リファクタリングや機能追加時の安全性を確保し、コードの品質を維持することができます。
 
-次のセクションでは、[非同期処理のテスト](docs/collection-of-TDD-patterns-TypeScript/asynchronous-processing-testing.md)についてです。
+次のセクションでは、[非同期処理のテスト](./asynchronous-processing-testing.md)についてです。
 
 
 ## 参考資料
