@@ -118,7 +118,7 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the CC-BY-4.0 license.',
-      copyright: 'Copyright © 2025-present',
+      copyright: 'Copyright © 2025 shuji-bonji',
     },
   },
 });
