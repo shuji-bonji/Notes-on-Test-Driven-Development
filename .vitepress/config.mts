@@ -34,6 +34,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'TDDとは', link: "/what's-TDD" },
       {
         text: 'TypeScriptでのTDDパターン集',
         link: '/collection-of-TDD-patterns-TypeScript/',
