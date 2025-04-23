@@ -10,6 +10,7 @@ export default defineConfig({
   // GitHub Pagesなどにデプロイする場合のベースパス
   base: '/Notes-on-Test-Driven-Development/',
   head: [
+    // OGP
     [
       'meta',
       { property: 'og:title', content: 'Notes on Test-Driven Development' },
@@ -25,6 +26,36 @@ export default defineConfig({
       'meta',
       {
         property: 'og:image',
+        content:
+          'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/images/tdd-cycle.png',
+      },
+    ],
+    [
+      'meta',
+      {
+        property: 'og:url',
+        content:
+          'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/',
+      },
+    ],
+
+    // Twitter Card
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    [
+      'meta',
+      { name: 'twitter:title', content: 'Notes on Test-Driven Development' },
+    ],
+    [
+      'meta',
+      {
+        name: 'twitter:description',
+        content: 'TypeScript で学ぶ TDD パターン集',
+      },
+    ],
+    [
+      'meta',
+      {
+        name: 'twitter:image',
         content:
           'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/images/tdd-cycle.png',
       },
