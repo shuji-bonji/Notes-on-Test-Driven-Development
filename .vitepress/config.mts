@@ -153,4 +153,7 @@ export default defineConfig({
       copyright: 'Copyright © 2025 shuji-bonji',
     },
   },
+  sitemap: {
+    hostname: 'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/',
+  },
 });
