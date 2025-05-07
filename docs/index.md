@@ -7,7 +7,7 @@ hero:
   text: "Test-Driven Development with TypeScript"
   tagline: テスト駆動開発の実践的パターンガイド
   image:
-    src: /images/tdd-cycle.png
+    src: /images/tdd-cycle.webp
     alt: TDD Cycle
   actions:
     - theme: brand

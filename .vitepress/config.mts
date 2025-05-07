@@ -27,7 +27,7 @@ export default defineConfig({
       {
         property: 'og:image',
         content:
-          'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/images/tdd-cycle.png',
+          'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/images/tdd-cycle.webp',
       },
     ],
     [
@@ -57,7 +57,7 @@ export default defineConfig({
       {
         name: 'twitter:image',
         content:
-          'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/images/tdd-cycle.png',
+          'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/images/tdd-cycle.webp',
       },
     ],
   ],
