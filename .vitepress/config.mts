@@ -57,7 +57,7 @@ export default defineConfig({
       {
         name: 'twitter:image',
         content:
-          'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/images/tdd-cycle.webp',
+          'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/images/tdd-cycle.png',
       },
     ],
   ],
