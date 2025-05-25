@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/sitemap.xml
