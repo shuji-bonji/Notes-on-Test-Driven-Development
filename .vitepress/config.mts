@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'テスト駆動開発(TDD)',
-  description: 'Test-Driven Development with TypeScript',
+  title: 'TypeScript で学ぶ テスト駆動開発(TDD)',
+  description: 'TypeScript で学ぶ テスト駆動開発',
   lang: 'ja',
   // docs フォルダをルートとして扱う
   srcDir: './docs',
@@ -13,7 +13,7 @@ export default defineConfig({
     // OGP
     [
       'meta',
-      { property: 'og:title', content: 'Notes on Test-Driven Development' },
+      { property: 'og:title', content: 'TypeScript で学ぶ テスト駆動開発' },
     ],
     [
       'meta',
@@ -43,7 +43,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     [
       'meta',
-      { name: 'twitter:title', content: 'Notes on Test-Driven Development' },
+      { name: 'twitter:title', content: 'TypeScript で学ぶ テスト駆動開発' },
     ],
     [
       'meta',
