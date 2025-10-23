@@ -60,6 +60,7 @@ export default defineConfig({
           'https://shuji-bonji.github.io/Notes-on-Test-Driven-Development/images/tdd-cycle.png',
       },
     ],
+    ['link', { rel: 'icon', href: 'favicon.ico' }],
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
